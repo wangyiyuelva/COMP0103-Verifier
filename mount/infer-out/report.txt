@@ -1,0 +1,12 @@
+#0
+hello.c:12: error: Null Dereference
+  pointer `s` last assigned on line 11 could be null and is dereferenced at line 12, column 3.
+  10. void test() {
+  11.   int* s = NULL;
+  12.   *s = 42;
+        ^
+  13. }
+
+Found 1 issue
+          Issue Type(ISSUED_TYPE_ID): #
+  Null Dereference(NULL_DEREFERENCE): 1

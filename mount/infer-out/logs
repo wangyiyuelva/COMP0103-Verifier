@@ -1,0 +1,114 @@
+[25][      debug] Loading models took 229ms
+[26][      debug] Sqlite write daemon: starting up
+[26][      debug] Sqlite write daemon: set up complete, waiting for connections
+[25][environment] CWD = /infer-examples
+[25][environment] No .inferconfig file found
+[25][environment] Project root = /infer-examples
+[25][environment] INFER_ARGS =   
+[25][environment] command line arguments:   infer -- clang -c hello.c
+[25][environment] Available memory at startup: 4029 MB
+[25][environment] Active checkers: self-in-block (C/C++/ObjC), starvation (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net)
+[25][environment] Scheduler: file
+[25][environment] Cores used: 4
+[25][environment] Infer version v1.1.0
+[25][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[25][environment] 
+[25][   progress] Capturing in make/cc mode...
+[25][      debug] 
+[25][      debug] *** Beginning capture of file /infer-examples/hello.c ***
+[25][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[25][      debug] Elapsed: 131ms.
+[25][      debug] GC stats for capture:
+[25][      debug]   minor_words: 813842
+[25][      debug]   promoted_words: 210857
+[25][      debug]   major_words: 222792
+[25][      debug]   minor_collections: 2
+[25][      debug]   major_collections: 0
+[25][      debug]   compactions: 0
+[25][      debug]   top_heap_words: 1006592
+[25][      debug]   
+[25][environment] Parallel jobs: 4
+[25][   progress] Found 1 source file to analyze in /infer-examples/infer-out
+[31][   progress] hello.c starting
+[31][   progress] hello.c DONE
+[25][      debug] Backend stats:
+[25][      debug]   summary_file_try_load= 2
+[25][      debug]   summary_read_from_disk= 0
+[25][      debug]   summary_cache_hits= 7 (77%)
+[25][      debug]   summary_cache_misses= 2
+[25][      debug]   ondemand_procs_analyzed= 1
+[25][      debug]   ondemand_local_cache_hits= 1 (50%)
+[25][      debug]   ondemand_local_cache_misses= 1
+[25][      debug]   proc_locker_lock_time_user= 0.00000000
+[25][      debug]   proc_locker_lock_time_sys= 0.00000000
+[25][      debug]   proc_locker_lock_time_wall= 0.00000000
+[25][      debug]   proc_locker_unlock_time_user= 0.00000000
+[25][      debug]   proc_locker_unlock_time_sys= 0.00000000
+[25][      debug]   proc_locker_unlock_time_wall= 0.00000000
+[25][      debug]   restart_scheduler_useful_time_user= 0.00000000
+[25][      debug]   restart_scheduler_useful_time_sys= 0.00000000
+[25][      debug]   restart_scheduler_useful_time_wall= 0.00000000
+[25][      debug]   restart_scheduler_total_time_user= 0.00000000
+[25][      debug]   restart_scheduler_total_time_sys= 0.00000000
+[25][      debug]   restart_scheduler_total_time_wall= 0.00000000
+[25][      debug]   
+[25][      debug] GC stats for backend_stats.gc_stats_add.:
+[25][      debug]   minor_words: 50320
+[25][      debug]   promoted_words: 0
+[25][      debug]   major_words: 1412
+[25][      debug]   minor_collections: 0
+[25][      debug]   major_collections: 0
+[25][      debug]   compactions: 0
+[25][      debug]   top_heap_words: 4026368
+[25][      debug]   
+[25][      debug] GC stats for backend_stats.gc_stats_max.:
+[25][      debug]   minor_words: 50158
+[25][      debug]   promoted_words: 0
+[25][      debug]   major_words: 1412
+[25][      debug]   minor_collections: 0
+[25][      debug]   major_collections: 0
+[25][      debug]   compactions: 0
+[25][      debug]   top_heap_words: 1006592
+[25][      debug]   
+[25][      debug] Average over 4 processes
+[25][      debug] GC stats for backend_stats.gc_stats_average.:
+[25][      debug]   minor_words: 12580
+[25][      debug]   promoted_words: 0
+[25][      debug]   major_words: 353
+[25][      debug]   minor_collections: 0
+[25][      debug]   major_collections: 0
+[25][      debug]   compactions: 0
+[25][      debug]   top_heap_words: 1006592
+[25][      debug]   
+[25][      debug] Analysis phase finished in 151ms
+[25][      debug] backend_stats.scheduler_process_analysis_time_user= 0.01448300
+[25][      debug] backend_stats.scheduler_process_analysis_time_sys= 0.04122000
+[25][      debug] backend_stats.scheduler_process_analysis_time_wall= 0.15149450
+[25][      debug] GC stats for analysis_scheduler:
+[25][      debug]   minor_words: 112121
+[25][      debug]   promoted_words: 37157
+[25][      debug]   major_words: 45863
+[25][      debug]   minor_collections: 1
+[25][      debug]   major_collections: 2
+[25][      debug]   compactions: 1
+[25][      debug]   top_heap_words: 1006592
+[25][      debug]   
+[25][      debug] GC stats for report:
+[25][      debug]   minor_words: 22634
+[25][      debug]   promoted_words: 0
+[25][      debug]   major_words: 0
+[25][      debug]   minor_collections: 0
+[25][      debug]   major_collections: 0
+[25][      debug]   compactions: 0
+[25][      debug]   top_heap_words: 1006592
+[25][      debug]   
+[25][      debug] GC stats for main_process_full:
+[25][      debug]   minor_words: 2.58695e+06
+[25][      debug]   promoted_words: 413492
+[25][      debug]   major_words: 960174
+[25][      debug]   minor_collections: 7
+[25][      debug]   major_collections: 4
+[25][      debug]   compactions: 2
+[25][      debug]   top_heap_words: 1006592
+[25][      debug]   
+[26][      debug] Sqlite write daemon: terminating
