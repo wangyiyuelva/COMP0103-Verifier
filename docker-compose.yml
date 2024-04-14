@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  node-app:
+    image: node:20-alpine
+    ports:
+      - "7001:7001"
+    working_dir: /app
+    volumes:
+      - ./node-app:/app
+    command: sh -c "npm install && npm run dev"
+
+  clang-tidy:
+    build: ./clang-tidy
+
+  infer:
+    build: ./infer
+    volumes:
+      - ./mount:/infer-examples
+    command:
+      - /bin/bash
+      - /infer-examples/targetfile/run_target.sh
