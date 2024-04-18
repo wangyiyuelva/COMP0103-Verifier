@@ -1,0 +1,48 @@
+/src/target/target.cpp:29:10: warning: Access to field 'age' results in a dereference of a null pointer (loaded from variable 'max') [clang-analyzer-core.NullDereference]
+   29 |   return max->age;
+      |          ^~~
+/src/target/target.cpp:28:3: note: 'max' initialized to a null pointer value
+   28 |   struct Person* max = 0;
+      |   ^~~~~~~~~~~~~~~~~~
+/src/target/target.cpp:29:10: note: Access to field 'age' results in a dereference of a null pointer (loaded from variable 'max')
+   29 |   return max->age;
+      |          ^~~
+/src/target/target.cpp:54:20: warning: variable 'p' set but not used [clang-diagnostic-unused-but-set-variable]
+   54 |   int*             p;
+      |                    ^
+/src/target/target.cpp:55:3: warning: Value stored to 'p' is never read [clang-analyzer-deadcode.DeadStores]
+   55 |   p = (int*)malloc(sizeof(int));
+      |   ^   ~~~~~~~~~~~~~~~~~~~~~~~~~
+/src/target/target.cpp:55:3: note: Value stored to 'p' is never read
+   55 |   p = (int*)malloc(sizeof(int));
+      |   ^   ~~~~~~~~~~~~~~~~~~~~~~~~~
+/src/target/target.cpp:56:1: warning: Potential leak of memory pointed to by 'p' [clang-analyzer-unix.Malloc]
+   56 | }
+      | ^
+/src/target/target.cpp:55:13: note: Memory is allocated
+   55 |   p = (int*)malloc(sizeof(int));
+      |             ^~~~~~~~~~~~~~~~~~~
+/src/target/target.cpp:56:1: note: Potential leak of memory pointed to by 'p'
+   56 | }
+      | ^
+/src/target/target.cpp:67:1: warning: Potential leak of memory pointed to by 'p' [clang-analyzer-unix.Malloc]
+   67 | }
+      | ^
+/src/target/target.cpp:62:13: note: Memory is allocated
+   62 |   p = (int*)malloc(sizeof(int));
+      |             ^~~~~~~~~~~~~~~~~~~
+/src/target/target.cpp:63:13: note: Attempt to reallocate memory
+   63 |   q = (int*)realloc(p, sizeof(int) * 42);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/src/target/target.cpp:65:7: note: Assuming 'q' is equal to NULL
+   65 |   if (q != NULL)
+      |       ^~~~~~~~~
+/src/target/target.cpp:65:7: note: Reallocation failed
+   65 |   if (q != NULL)
+      |       ^~~~~~~~~
+/src/target/target.cpp:65:3: note: Taking false branch
+   65 |   if (q != NULL)
+      |   ^
+/src/target/target.cpp:67:1: note: Potential leak of memory pointed to by 'p'
+   67 | }
+      | ^

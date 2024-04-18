@@ -1,0 +1,1 @@
+cppcheck /src/target.cpp 2> /src/cppcheck_output.txt

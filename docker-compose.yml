@@ -12,11 +12,24 @@ services:
 
   clang-tidy:
     build: ./clang-tidy
+    volumes:
+      - ./mount:/src/target
+    command:
+      - /bin/bash
+      - /src/target/run_tidy.sh
 
   infer:
     build: ./infer
     volumes:
-      - ./mount:/infer-examples
+      - ./mount:/target
     command:
       - /bin/bash
-      - /infer-examples/targetfile/run_target.sh
+      - /target/run_infer.sh
+
+  cppcheck:
+    build: ./cppcheck
+    volumes:
+      - ./mount:/src
+    command:
+      - /bin/sh
+      - /src/run_cppcheck.sh
