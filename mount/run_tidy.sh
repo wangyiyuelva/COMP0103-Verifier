@@ -1,1 +1,1 @@
-clang-tidy /src/target/target.cpp > /src/target/tidy_output.txt
+clang-tidy /src/target/target.cpp > /src/target/output/tidy_output.txt

@@ -1,1 +1,1 @@
-cppcheck /src/target.cpp 2> /src/cppcheck_output.txt
+cppcheck /src/target.cpp 2> /src/output/cppcheck_output.txt

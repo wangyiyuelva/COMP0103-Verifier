@@ -1,1 +1,1 @@
-infer -- clang -c /target/target.cpp > /target/infer_output.txt
+infer -- clang -c /target/target.cpp > /target/output/infer_output.txt
