@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Code Submission</title>
+</head>
+<body>
+  <h1>Submit Your CPP Code</h1>
+  <form action="/submit-code" method="post">
+    <textarea name="code" rows="20" cols="80"></textarea><br>
+    <button type="submit">Submit Code</button>
+  </form>
+  <p id="message"></p>
+    <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      fetch('/submit-code', {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(form))
+      })
+      .then(response => response.text())
+      .then(message => {
+        document.getElementById('message').textContent = message;
+      })
+      .catch(error => {
+        console.error(error);
+        document.getElementById('message').textContent = 'Error submitting code';
+      });
+    });
+    </script>
+</body>
+</html>
