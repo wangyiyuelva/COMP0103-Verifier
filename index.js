@@ -15,11 +15,28 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.post('/submit-code', (req, res) => {
-  const code = req.body.code;
-  const filename = './mount/target.cpp';
+function detectCodeBlocks(content) {
+  // Regular expression for finding code blocks
+  const regex = /```c\+\+(.*?)```/s;
 
-  fs.writeFile(filename, code, (err) => {
+  let codeBlock = '';
+
+  let match;
+  if ((match = regex.exec(content)) !== null) {
+    codeBlock = match[1];
+  }
+  console.log(`codeBlock: ${codeBlock}`);
+
+  return codeBlock;
+}
+
+app.post('/submit-code', (req, res) => {
+  const content = req.body.code;
+  const codeBlock = detectCodeBlocks(content)
+
+  const filename = './mount/target.cpp';
+  
+  fs.writeFile(filename, codeBlock, (err) => {
     if (err) {
       console.error(err);
       return res.status(500).send('Error saving code');
