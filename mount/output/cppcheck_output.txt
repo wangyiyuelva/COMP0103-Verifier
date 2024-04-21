@@ -1,48 +1,48 @@
-/src/target.cpp:56:1: error: Memory leak: p [memleak]
+/src/target.cpp:55:1: error: Memory leak: p [memleak]
 }
 ^
-/src/target.cpp:29:10: error: Null pointer dereference: max [nullPointer]
+/src/target.cpp:28:10: error: Null pointer dereference: max [nullPointer]
   return max->age;
          ^
-/src/target.cpp:28:24: note: Assignment 'max=0', assigned value is 0
+/src/target.cpp:27:24: note: Assignment 'max=0', assigned value is 0
   struct Person* max = 0;
                        ^
-/src/target.cpp:29:10: note: Null pointer dereference
+/src/target.cpp:28:10: note: Null pointer dereference
   return max->age;
          ^
-/src/target.cpp:37:42: warning: Possible null pointer dereference: who [nullPointer]
+/src/target.cpp:36:42: warning: Possible null pointer dereference: who [nullPointer]
 int get_age(struct Person* who) { return who->age; }
                                          ^
-/src/target.cpp:33:24: note: Assignment 'who=0', assigned value is 0
+/src/target.cpp:32:24: note: Assignment 'who=0', assigned value is 0
   struct Person* who = 0;
                        ^
-/src/target.cpp:40:37: note: Calling function 'Person_create' returns 0
+/src/target.cpp:39:37: note: Calling function 'Person_create' returns 0
   struct Person* joe = Person_create(32, 64, 140);
                                     ^
-/src/target.cpp:40:37: note: Assignment 'joe=Person_create(32,64,140)', assigned value is 0
+/src/target.cpp:39:37: note: Assignment 'joe=Person_create(32,64,140)', assigned value is 0
   struct Person* joe = Person_create(32, 64, 140);
                                     ^
-/src/target.cpp:41:18: note: Calling function 'get_age', 1st argument 'joe' value is 0
+/src/target.cpp:40:18: note: Calling function 'get_age', 1st argument 'joe' value is 0
   return get_age(joe);
                  ^
-/src/target.cpp:37:42: note: Null pointer dereference
+/src/target.cpp:36:42: note: Null pointer dereference
 int get_age(struct Person* who) { return who->age; }
                                          ^
-/src/target.cpp:37:42: error: Null pointer dereference: who [ctunullpointer]
+/src/target.cpp:36:42: error: Null pointer dereference: who [ctunullpointer]
 int get_age(struct Person* who) { return who->age; }
                                          ^
-/src/target.cpp:33:24: note: Assignment 'who=0', assigned value is 0
+/src/target.cpp:32:24: note: Assignment 'who=0', assigned value is 0
   struct Person* who = 0;
                        ^
-/src/target.cpp:40:37: note: Calling function 'Person_create' returns 0
+/src/target.cpp:39:37: note: Calling function 'Person_create' returns 0
   struct Person* joe = Person_create(32, 64, 140);
                                     ^
-/src/target.cpp:40:37: note: Assignment 'joe=Person_create(32,64,140)', assigned value is 0
+/src/target.cpp:39:37: note: Assignment 'joe=Person_create(32,64,140)', assigned value is 0
   struct Person* joe = Person_create(32, 64, 140);
                                     ^
-/src/target.cpp:41:17: note: Calling function get_age, 1st argument is null
+/src/target.cpp:40:17: note: Calling function get_age, 1st argument is null
   return get_age(joe);
                 ^
-/src/target.cpp:37:42: note: Dereferencing argument who that is null
+/src/target.cpp:36:42: note: Dereferencing argument who that is null
 int get_age(struct Person* who) { return who->age; }
                                          ^

@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 function detectCodeBlocks(content) {
   // Regular expression for finding code blocks
-  const regex = /```c\+\+(.*?)```/s;
+  const regex = /```c[\+]*(.*?)```/s;
 
   let codeBlock = '';
 
@@ -49,5 +49,5 @@ app.post('/submit-code', (req, res) => {
 
 
 app.listen(7001, () => {
-  console.log('Server is running');
+  console.log('Server is running: http://localhost:7001');
 });

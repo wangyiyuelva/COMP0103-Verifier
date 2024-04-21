@@ -1,39 +1,39 @@
 
-target/target.cpp:29: error: Null Dereference
-  pointer `max` last assigned on line 28 could be null and is dereferenced at line 29, column 10.
-  27. int simple_null_pointer() {
-  28.   struct Person* max = 0;
-  29.   return max->age;
+target/target.cpp:28: error: Null Dereference
+  pointer `max` last assigned on line 27 could be null and is dereferenced at line 28, column 10.
+  26. int simple_null_pointer() {
+  27.   struct Person* max = 0;
+  28.   return max->age;
                ^
-  30. }
-  31. 
+  29. }
+  30. 
 
-target/target.cpp:41: error: Null Dereference
-  pointer `joe` last assigned on line 40 could be null and is dereferenced by call to `get_age()` at line 41, column 10.
-  39. int null_pointer_interproc() {
-  40.   struct Person* joe = Person_create(32, 64, 140);
-  41.   return get_age(joe);
+target/target.cpp:40: error: Null Dereference
+  pointer `joe` last assigned on line 39 could be null and is dereferenced by call to `get_age()` at line 40, column 10.
+  38. int null_pointer_interproc() {
+  39.   struct Person* joe = Person_create(32, 64, 140);
+  40.   return get_age(joe);
                ^
-  42. }
-  43. 
+  41. }
+  42. 
 
-target/target.cpp:49: error: Resource Leak
-  resource acquired by call to `open()` at line 45, column 27 is not released after line 49, column 5.
-  47.     char          buffer[256];
-  48.     // We can easily batch that by separating with space
-  49.     write(fd, buffer, strlen(buffer));
+target/target.cpp:48: error: Resource Leak
+  resource acquired by call to `open()` at line 44, column 12 is not released after line 48, column 5.
+  46.     char buffer[256];
+  47.     // We can easily batch that by separating with space
+  48.     write(fd, buffer, strlen(buffer));
           ^
-  50.   }
-  51. }
+  49.   }
+  50. }
 
-target/target.cpp:55: error: Dead Store
+target/target.cpp:54: error: Dead Store
   The value written to &p (type int*) is never used.
-  53. void simple_leak() {
-  54.   int*             p;
-  55.   p = (int*)malloc(sizeof(int));
+  52. void simple_leak() {
+  53.   int* p;
+  54.   p = (int*)malloc(sizeof(int));
         ^
-  56. }
-  57. 
+  55. }
+  56. 
 
 
 Found 4 issues
